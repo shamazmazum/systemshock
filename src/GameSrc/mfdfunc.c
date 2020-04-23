@@ -450,15 +450,13 @@ uchar mfd_weapon_expose_projectile(MFD *m, weapon_slot *ws, ubyte control) {
     /*
      * FIXME: shamaz 20.04.2020
      *
-     * The following two lines were present in the code provided by
-     * Nightdive Studios, LLC along with the following comment:
+     * The following two lines are added by donnierussellii along with
+     * the following comment:
      *    > ammo_type and setting have same memory location in
      *    > weapon_slot union. setting can have values greater than
      *    > num ammo buttons so check for and fix oob
-     * It's not clear how oob access can happen because .setting and
-     * .ammo_type fields are used independently (based on a type of
-     * the weapon, e.g. beam or other range weapon) and never .setting
-     * value is treated as .ammo_type and vice versa.
+     * Turns out oob access can happen only when using weapons cheat
+     * (C-2).
      *
      * On the other hand they cause a problem when you reload your
      * weapon with the last clip (of any suitable type). At first, if
@@ -468,7 +466,8 @@ uchar mfd_weapon_expose_projectile(MFD *m, weapon_slot *ws, ubyte control) {
      * (sometimes even inappropriate for this particular weapon).
      *
      * So I find it better to comment these lines out. Seems to be
-     * perfectly safe, but some more testing is required.
+     * perfectly safe, but some more testing is required. I also will
+     * forbid cheating for weapons until better solution is found.
      */
     /* if (ws->ammo_type >= num_ammo_buttons) */
     /*     ws->ammo_type = (num_ammo_buttons ? ammo_types[0] : 0); */
