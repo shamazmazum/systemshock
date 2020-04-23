@@ -1013,58 +1013,61 @@ uchar toggle_physics_func(ushort keycode, uint32_t context, intptr_t data) {
 uchar toggle_giveall_func(ushort keycode, uint32_t context, intptr_t data) {
     message_info("Kick some ass!");
 
-    for (int i = 0; i < NUM_HARDWAREZ; i++)
-        player_struct.hardwarez[i] = 1;
+    for (int i = 0; i < NUM_HARDWAREZ; i++) {
+        if (player_struct.hardwarez[i] < 1) {
+            player_struct.hardwarez[i] = 1;
+        }
+    }
     player_struct.hardwarez[HARDWARE_360] = 3;
 
     //rail gun
-    player_struct.weapons[0].type = GUN_SUBCLASS_SPECIAL;
-    player_struct.weapons[0].subtype = 1;
-    player_struct.weapons[0].ammo = 50;
-    player_struct.weapons[0].ammo_type = 0;
-    player_struct.weapons[0].make_info = 0;
+    /* player_struct.weapons[0].type = GUN_SUBCLASS_SPECIAL; */
+    /* player_struct.weapons[0].subtype = 1; */
+    /* player_struct.weapons[0].ammo = 50; */
+    /* player_struct.weapons[0].ammo_type = 0; */
+    /* player_struct.weapons[0].make_info = 0; */
 
     //ion beam
-    player_struct.weapons[1].type = GUN_SUBCLASS_BEAM;
-    player_struct.weapons[1].subtype = 2;
-    player_struct.weapons[1].heat = 0;
-    player_struct.weapons[1].setting = 40;
-    player_struct.weapons[1].make_info = 0;
+    /* player_struct.weapons[1].type = GUN_SUBCLASS_BEAM; */
+    /* player_struct.weapons[1].subtype = 2; */
+    /* player_struct.weapons[1].heat = 0; */
+    /* player_struct.weapons[1].setting = 40; */
+    /* player_struct.weapons[1].make_info = 0; */
 
     //riot gun, hollow
-    player_struct.weapons[2].type = GUN_SUBCLASS_PISTOL;
-    player_struct.weapons[2].subtype = 4;
-    player_struct.weapons[2].ammo = 100;
-    player_struct.weapons[2].ammo_type = 0;
-    player_struct.weapons[2].make_info = 0;
+    /* player_struct.weapons[2].type = GUN_SUBCLASS_PISTOL; */
+    /* player_struct.weapons[2].subtype = 4; */
+    /* player_struct.weapons[2].ammo = 100; */
+    /* player_struct.weapons[2].ammo_type = 0; */
+    /* player_struct.weapons[2].make_info = 0; */
 
     //skorpion, slag
-    player_struct.weapons[3].type = GUN_SUBCLASS_AUTO;
-    player_struct.weapons[3].subtype = 1;
-    player_struct.weapons[3].ammo = 150;
-    player_struct.weapons[3].ammo_type = 0;
-    player_struct.weapons[3].make_info = 0;
+    /* player_struct.weapons[3].type = GUN_SUBCLASS_AUTO; */
+    /* player_struct.weapons[3].subtype = 1; */
+    /* player_struct.weapons[3].ammo = 150; */
+    /* player_struct.weapons[3].ammo_type = 0; */
+    /* player_struct.weapons[3].make_info = 0; */
 
     //magpulse
-    player_struct.weapons[4].type = GUN_SUBCLASS_SPECIAL;
-    player_struct.weapons[4].subtype = 0;
-    player_struct.weapons[4].ammo = 50;
-    player_struct.weapons[4].ammo_type = 0;
-    player_struct.weapons[4].make_info = 0;
+    /* player_struct.weapons[4].type = GUN_SUBCLASS_SPECIAL; */
+    /* player_struct.weapons[4].subtype = 0; */
+    /* player_struct.weapons[4].ammo = 50; */
+    /* player_struct.weapons[4].ammo_type = 0; */
+    /* player_struct.weapons[4].make_info = 0; */
 
     //sparq
-    player_struct.weapons[5].type = GUN_SUBCLASS_BEAM;
-    player_struct.weapons[5].subtype = 0;
-    player_struct.weapons[5].heat = 0;
-    player_struct.weapons[5].setting = 40;
-    player_struct.weapons[5].make_info = 0;
+    /* player_struct.weapons[5].type = GUN_SUBCLASS_BEAM; */
+    /* player_struct.weapons[5].subtype = 0; */
+    /* player_struct.weapons[5].heat = 0; */
+    /* player_struct.weapons[5].setting = 40; */
+    /* player_struct.weapons[5].make_info = 0; */
 
     //laser rapier
-    player_struct.weapons[6].type = GUN_SUBCLASS_HANDTOHAND;
-    player_struct.weapons[6].subtype = 1;
-    player_struct.weapons[6].heat = 0;
-    player_struct.weapons[6].setting = 0;
-    player_struct.weapons[6].make_info = 0;
+    /* player_struct.weapons[6].type = GUN_SUBCLASS_HANDTOHAND; */
+    /* player_struct.weapons[6].subtype = 1; */
+    /* player_struct.weapons[6].heat = 0; */
+    /* player_struct.weapons[6].setting = 0; */
+    /* player_struct.weapons[6].make_info = 0; */
 
     player_struct.hit_points = 255;
     player_struct.energy = 255;
